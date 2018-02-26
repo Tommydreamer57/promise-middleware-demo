@@ -25,7 +25,7 @@ const REJECTED = '_REJECTED';
 // assign action.type's to variables for the sake of debugging
 const GET_USERS = 'GET_USERS'
 
-// action creators are exported to our components so that our components can access them
+// action builders are exported to our components so that our components can access them
 export function getUsers() {
     // users will be our promise object requesting data from an api
     let users = axios.get('http://45.55.132.212:3001/api/admin/users').then(response => response.data)
@@ -34,6 +34,16 @@ export function getUsers() {
     return {
         type: GET_USERS,
         payload: users
+    }
+}
+
+// try adding the code necessary to implement this function
+// I've added the url to get posts from my personal project
+// you'll have to add the type and payload to this action builder, add it to the reducer, and connect it to our component
+export function getPosts() {
+    let posts = axios.get('http://45.55.132.212:3001/api/posts/CSS').then(response => response.data)
+    return {
+
     }
 }
 
